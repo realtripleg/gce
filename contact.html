@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Gunner Castle Entertainment</title>
+  <meta name="description" content="Get in touch with Gunner Castle Entertainment about your next project.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav__brand" href="index.html">
+        <span class="nav__prompt" aria-hidden="true">~/</span>
+        <span>gce</span>
+      </a>
+      <button class="nav__toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span>
+      </button>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html" data-route="index.html">Home</a></li>
+        <li><a href="services.html" data-route="services.html">Services</a></li>
+        <li><a href="about.html" data-route="about.html">About</a></li>
+        <li><a href="contact.html" data-route="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-header">
+      <div class="container">
+        <h1>Contact</h1>
+      </div>
+    </section>
+    <section class="section">
+      <div class="container">
+        <div class="contact-layout">
+          <div class="contact-info">
+            <h2>Start a Project</h2>
+            <p>Have something you need built? Tell us about it and we'll get back to you.</p>
+            <ul class="contact-list">
+              <li>
+                <strong>Email</strong>
+                <a href="mailto:gce@gunnercastle.com">gce@gunnercastle.com</a>
+              </li>
+              <li>
+                <strong>GitHub</strong>
+                <a href="https://github.com/realtripleg" target="_blank" rel="noopener">github.com/realtripleg</a>
+              </li>
+            </ul>
+          </div>
+          <form class="contact-form" action="mailto:gce@gunnercastle.com" method="POST" enctype="text/plain">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="message">Project details</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Gunner Castle Entertainment</p>
+      <div class="footer__links">
+        <a href="https://github.com/realtripleg" target="_blank" rel="noopener">GitHub</a>
+        <a href="mailto:gce@gunnercastle.com">Email</a>
+        <a href="privacy.html">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
