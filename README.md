@@ -1,6 +1,6 @@
 # gce
 
-Website for **Gunner Castle Entertainment**, a software and web engineering studio building custom websites and custom software.
+Website for **Gunner Castle Entertainment LLC**, a software and web engineering studio building custom websites and custom software.
 
 Live at **[gce.gunnercastle.com](https://gce.gunnercastle.com)**.
 

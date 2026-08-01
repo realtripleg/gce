@@ -22,7 +22,6 @@
     // ── Active nav link ──
     var path = window.location.pathname;
     var currentPage = path.split('/').pop() || 'index.html';
-    if (currentPage === '') currentPage = 'index.html';
     document.querySelectorAll('.nav__links a[data-route]').forEach(function (link) {
       if (link.getAttribute('data-route') === currentPage) {
         link.classList.add('is-active');
@@ -45,6 +44,34 @@
         });
       }, { rootMargin: '0px 0px -60px 0px', threshold: 0.1 });
       revealEls.forEach(function (el) { observer.observe(el); });
+    }
+
+    // ── Contact form ──
+    // Browsers no longer reliably submit a form to a mailto: action, so build
+    // the message and hand it to the user's mail client ourselves.
+    var contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function (e) {
+        var action = contactForm.getAttribute('action') || '';
+        var to = action.replace(/^mailto:/i, '').trim();
+        if (!to) return;
+        e.preventDefault();
+
+        var field = function (id) {
+          var el = contactForm.querySelector('#' + id);
+          return el ? el.value.trim() : '';
+        };
+        var name = field('name');
+        var email = field('email');
+        var message = field('message');
+
+        var subject = name ? 'Website enquiry from ' + name : 'Website enquiry';
+        var body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
+
+        window.location.href = 'mailto:' + to +
+          '?subject=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent(body);
+      });
     }
 
     // ── Typing animation (home page only) ──
